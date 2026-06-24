@@ -1,0 +1,8 @@
+S = """AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"""
+
+a = S.count("A")
+c = S.count("C")
+g = S.count("G")
+t = S.count("T")
+
+print(a, c, g, t)
