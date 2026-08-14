@@ -1,0 +1,19 @@
+def total_rna_from_protein(protein_string):
+    # Number of codons for each amino acid in standard genetic code
+    codon_counts = {
+        'F': 2, 'L': 6, 'S': 6, 'Y': 2, 'C': 2, 'W': 1, 'P': 4,
+        'H': 2, 'Q': 2, 'R': 6, 'I': 3, 'M': 1, 'T': 4, 'N': 2,
+        'K': 2, 'V': 4, 'A': 4, 'E': 2, 'D': 2, 'G': 4
+    }
+    
+    # Start with 3 for the 3 stop codons (UAA, UAG, UGA)
+    total_ways = 3
+    
+    for amino_acid in protein_string.strip():
+        total_ways = (total_ways * codon_counts[amino_acid]) % 1000000
+        
+    return total_ways
+
+if __name__ == "__main__":
+    sample_dataset = "MA"
+    print("Sample Output:", total_rna_from_protein(sample_dataset))
